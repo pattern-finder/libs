@@ -1,40 +1,30 @@
-  
+
 #ifndef DEF_PIXEL // include guard
 #define DEF_PIXEL
 
+class Pixel
+{
 
-   
+public:
+  Pixel(int x, int y, int *color);
 
-  class Pixel{
-      
+  int x;
+  int y;
+  int color[3] = {0, 0, 0};
 
-        public :
-        Pixel(int x, int y, int *color);
+  int getX();
 
- 
-        int x;
-        int y;
-        int color[3] = {0,0,0};
+  int getY();
 
+  int *getColor();
 
-            int getX();
+  int getColorRed();
 
-            int getY();
+  int getColorGreen();
 
-            int *getColor();
-            
-            int getColorRed();
+  int getColorBlue();
 
-            int getColorGreen();
-            
-            int getColorBlue();
-
-            bool compare(Pixel pixel2);
-
-
-    }; 
-
-
-
+  bool compare(Pixel pixel2);
+};
 
 #endif /* MY_CLASS_H */

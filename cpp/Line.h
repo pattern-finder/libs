@@ -1,38 +1,30 @@
 #ifndef LINE_H // include guard
-#define  LINE_H
+#define LINE_H
 
 #include "Pixel.h"
 #include <vector>
 
+class Line
+{
 
-   
+public:
+    std::vector<Pixel> lineContent;
 
-    
-    class Line{
+    int size;
 
+    Line();
 
-        public :  
-            std::vector<Pixel> lineContent;
+    Line(int size);
 
-            int size;
+    void insertPixel(Pixel p);
 
-            Line();
+    int getSize();
 
-            Line(int size);
+    Pixel getPixelFromLine(int x);
 
-            void insertPixel(Pixel p);
+    void printEachPixelValuesOfOneLine();
 
-            int getSize();
+    void printEachPixelsOfOneLine();
+};
 
-            Pixel getPixelFromLine(int x);
-
-            void printEachPixelValuesOfOneLine();
-
-            void printEachPixelsOfOneLine();
-
-
-
-    };
-
-
-    #endif /* MY_CLASS_H */
+#endif /* MY_CLASS_H */

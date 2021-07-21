@@ -1,37 +1,32 @@
 
 
 #ifndef DEF_MATRICE // include guard
-#define DEF_MATRICE 
+#define DEF_MATRICE
 
 #include "Pixel.h"
-#include "Line.h"    
+#include "Line.h"
 
+class Matrice
+{
 
+public:
+    int size;
 
-    
- class Matrice{
-        
+    std::vector<Line> matriceContent;
 
-        public :
-        
-            int size;
+    Matrice(int size);
 
-            std::vector<Line> matriceContent;
-          
-            Matrice(int size);
+    int getSize();
 
-            int getSize();
+    Pixel getPixel(int x, int y);
 
-            Pixel getPixel(int x, int y);
+    std::vector<Line> getMatriceContent();
 
-            std::vector<Line> getMatriceContent();
+    void toStringPixel();
 
-            void toStringPixel();
+    void toStringColor();
 
-            void toStringColor();
-
-            void initContent(cv::Mat img);
-
-    }; 
+    void initContent(cv::Mat img);
+};
 
 #endif /* MY_CLASS_H */
