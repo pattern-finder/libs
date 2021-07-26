@@ -278,7 +278,7 @@ void Opencv::setNumberImageResultat(int nbMatriceResult)
 
 void Opencv::initSizeImage()
 {
-    std::string image_path = cv::samples::findFile("./pattern/" + this->nameExercice + "/option1.png");
+    std::string image_path = cv::samples::findFile("./pictures/option1.png");
     cv::Mat img = cv::imread(image_path, cv::IMREAD_COLOR);
     this->sizeImage = img.size[0];
 }
@@ -286,7 +286,7 @@ void Opencv::initSizeImage()
 void Opencv::getNumberImage()
 {
 
-    std::string path = "./pattern/" + this->nameExercice;
+    std::string path = "./pictures/" ;
     int cptImage = 0;
     DIR *dir;
     struct dirent *ent;
@@ -321,7 +321,7 @@ void Opencv::extractImage()
 
     while (i <= this->numberImage)
     {
-        std::string PATH = "./pattern/" + this->nameExercice + "/option" + std::to_string(i) + ".png";
+        std::string PATH = "./pictures/option" + std::to_string(i) + ".png";
         std::string image_path = cv::samples::findFile(PATH);
         cv::Mat img = cv::imread(image_path);
         this->listPatternInit.push_back(img);
@@ -334,7 +334,7 @@ void Opencv::extractImage()
 Matrice Opencv::matriceResult()
 {
 
-    std::string image_path = cv::samples::findFile("./pattern/" + this->nameExercice + "/result.png");
+    std::string image_path = cv::samples::findFile("./pictures/result.png");
     cv::Mat img = cv::imread(image_path);
     Matrice matriceResult = Matrice(this->sizeImage);
     matriceResult.initContent(img);
