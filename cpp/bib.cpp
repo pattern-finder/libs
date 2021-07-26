@@ -4,10 +4,12 @@
 #include <opencv2/highgui.hpp>
 #include <dirent.h>
 #include <sys/types.h>
+#include <filesystem>
+#include <map>
 
 #include "Matrice.h"
 #include "Opencv.h"
-#include "Exercice.h"
+#include "Exercice.h"  
 #include "Line.h"
 #include "Pixel.h"
 using namespace std;
@@ -131,6 +133,26 @@ std::string Exercice::assertResMultInt(std::vector<int> solution_user, std::vect
         return "ERROR";
     }
 }
+
+
+
+
+std::string Exercice::assertResMultDict(const map<string, int> solution_user,const map<string, int> resultat){
+
+
+            if(solution_user.size() != resultat.size())
+                return "ERROR";
+
+            typename map<string,int>::const_iterator i, j;
+            for(i = solution_user.begin(), j = resultat.begin(); i != solution_user.end(); ++i, ++j)
+            {
+                if(*i != *j)
+                return "ERROR";
+            }
+
+            return "SUCESS";
+            }
+
 
 Line::Line()
 {
