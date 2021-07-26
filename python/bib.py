@@ -136,14 +136,14 @@ class Opencv:
     def setNumberImageResultat(self, nbMatriceResult):
         self.nbMatriceResult = nbMatriceResult
 
-    def initSizeImage(self):
-        img = Image.open("./pattern/"+self.nameExercice+"/option1.png")
+    def initSizeImages(self):
+        img = Image.open("./pictures/option1.png")
         self.sizeImage = img.size[0]
 
 
     def getNumberImage(self):
 
-        PATH = "./pattern/"+self.nameExercice
+        PATH = "./pictures/"
 
         cpt = 0
         for image in os.listdir(PATH):
@@ -158,7 +158,7 @@ class Opencv:
         i = 1
 
         while i <= self.numberImage:
-            img = cv.imread("./pattern/"+self.nameExercice+"/option"+str(i)+".png")
+            img = cv.imread("./pictures/option"+str(i)+".png")
             i += 1
 
             self.listPatternInit.append(img)
@@ -181,7 +181,7 @@ class Opencv:
 
     def matriceResult(self,size_matrice):
 
-        img = cv.imread("./pattern/" + self.nameExercice + "/result.png")
+        img = cv.imread("./pictures/result.png")
         resultMatrice = Matrice(size_matrice)
         resultMatrice.initContent(img)
 
